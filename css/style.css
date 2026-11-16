@@ -1,0 +1,530 @@
+/* MINDEGYIK OLDALRA  */
+
+:root {
+    --hatter: #382e28;      /* oldal háttere */
+    --papir: #eee2c5;       /* kártyák színe */
+    --szegely: #c5ad7f;     /* kártyák széle */
+    --tinta: #2e2216;       /* szöveg */
+    --halvany: #695846;     /* halványabb szöveg */
+    --arany: #cea729;       /* kiemelés */
+    --piros: #99241e;       /* pecsét */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--hatter);
+    color: var(--tinta);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    line-height: 1.5;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+h1, h2, h3 {
+    margin: 0 0 8px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.paper {
+    background: var(--papir);
+    border: 1px solid var(--szegely);
+    border-radius: 4px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+}
+
+.section-title {
+    margin: 40px 0 16px;
+    color: var(--arany);
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--arany);
+}
+
+.site-header {
+    margin-top: 30px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    border: 2px solid var(--arany);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.agency-name {
+    font-size: 2.3rem;
+}
+
+.agency-name span {
+    color: var(--arany);
+}
+
+.site-header-desc {
+    margin: 0;
+    color: var(--halvany);
+}
+
+.case-label {
+    margin: 0;
+    color: var(--piros);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.stamp {
+    display: inline-block;
+    padding: 2px 8px;
+    color: var(--piros);
+    border: 2px solid var(--piros);
+    font-family: 'Courier New', Courier, monospace;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.site-footer {
+    margin-top: 50px;
+    padding: 20px;
+    text-align: center;
+    color: var(--szegely);
+    border-top: 1px solid var(--arany);
+}
+
+/*   CSAK A FŐOLDALRA (index.html)  */
+
+.cases {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.case-card {
+    display: block;
+    padding: 20px;
+    color: var(--tinta);
+    text-decoration: none;
+    transition: background 0.2s ease;
+}
+
+.case-card:hover {
+    background: #fdf3de;
+}
+
+.case-card-head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.case-card-num {
+    color: var(--halvany);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.case-card-desc {
+    color: var(--halvany);
+}
+
+.case-card-cta {
+  color: var(--piros);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.case-card.is-locked {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.creators {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.creator-card {
+  padding: 16px;
+  text-align: center;
+}
+
+.creator-card-photo {
+  width: 70px;
+  background: var(--szegely);
+  height: 70px;
+  margin: 0 auto 8px;
+  border-radius: 50%;
+}
+
+.creator-card-name {
+    margin: 0;
+    font-weight: bold;
+}
+
+.creator-card-role {
+    margin: 0;
+    color: var(--halvany);
+}
+
+/* CSAK AZ ÜGYOLDALAKRA (ugy1, ugy2) */
+
+.theme-train {
+    --hatter: #282e33;
+}
+
+.theme-mansion {
+    --hatter: #3b2621;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.fact-card {
+  padding: 12px 16px;
+  border-left: 5px solid var(--arany);
+}
+
+.fact-card-label {
+  margin: 0;
+  color: var(--halvany);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.fact-card-value {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.suspects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.suspect-card {
+  padding: 10px 10px 14px;
+  background: #ffffff;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.suspect-card-name {
+  margin: 0;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.suspect-card-role {
+  margin: 0;
+  color: var(--halvany);
+  font-style: italic;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid var(--arany);
+  border-radius: 4px;
+  background: none;
+  color: var(--arany);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--arany);
+  color: var(--tinta);
+}
+
+.btn--primary {
+  background: var(--arany);
+  color: var(--tinta);
+}
+
+.btn--ink {
+  border-color: var(--tinta);
+  color: var(--tinta);
+}
+
+.btn--ink:hover {
+  background: var(--tinta);
+  color: var(--papir);
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.case-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.game-hud {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  z-index: 100;
+}
+
+.timer {
+  padding: 6px 14px;
+  background: var(--tinta);
+  color: var(--papir);
+  border: 2px solid var(--arany);
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.timer-phase {
+  display: block;
+  font-size: 0.7rem;
+  color: var(--arany);
+}
+
+.timer.is-danger {
+    color: #ff6b5b;
+    border-color: #ff6b5b;
+}
+
+.game {
+    margin-top: 40px;
+}
+
+.game-phase {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.game-phase-title {
+  border-bottom: 2px dashed var(--szegely);
+  padding-bottom: 6px;
+}
+
+.game-phase-hint {
+  color: var(--halvany);
+  font-style: italic;
+}
+
+.interrogation {
+  display: flex;
+  gap: 20px;
+}
+
+.suspect-picker {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+}
+
+.suspect-picker button {
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 8px;
+  background: #fff8e8;
+  border: 1px solid var(--szegely);
+  font-family: 'Courier New', Courier, monospace;
+  text-align: left;
+  cursor: pointer;
+}
+
+.suspect-picker button.is-active {
+    border-left: 4px solid var(--piros);
+}
+
+.transcript {
+  flex: 1;
+  min-height: 300px;
+  padding: 16px;
+  background: #fffaf0;
+  border: 1px solid var(--szegely);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.transcript-speaker {
+  color: var(--piros);
+  font-weight: bold;
+}
+
+.evidence-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.evidence-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  margin-bottom: 8px;
+  border: 1px dashed var(--szegely);
+}
+
+.evidence-item-name {
+    margin: 0;
+    font-weight: bold;
+}
+
+.evidence-item-desc {
+    margin: 0;
+    color: var(--halvany);
+    font-size: 0.9rem;
+}
+
+.evidence-item select {
+  padding: 6px;
+  font-family: Georgia, serif;
+}
+
+.verdict-question {
+  border: none;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.verdict-question legend {
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.verdict-option {
+  display: block;
+  padding: 4px 0;
+  cursor: pointer;
+}
+
+.phase-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.result {
+    text-align: center;
+}
+
+.result-score {
+  font-size: 4rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.result.is-pass .result-stamp {
+    color: green;
+    border-color: green;
+}
+
+.board-modal {
+  width: 90%;
+  max-width: 900px;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.board-modal::backdrop {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.board {
+  padding: 20px;
+  background: #8a6a45;
+  border: 8px solid #4a3523;
+}
+
+.board-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--papir);
+  margin-bottom: 16px;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.board-note {
+  padding: 12px;
+  background: #fff7c9;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+/* TELEFONOS NÉZET */
+
+@media (max-width: 700px) {
+  .site-header {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .cases,
+  .creators,
+  .facts,
+  .suspects,
+  .board-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .interrogation {
+      flex-direction: column;
+  }
+
+  .suspect-picker {
+      width: 100%;
+  }
+
+  .evidence-item {
+      flex-direction: column;
+      align-items: stretch;
+  }
+
+  .case-actions {
+      flex-direction: column;
+      gap: 10px;
+  }
+}
